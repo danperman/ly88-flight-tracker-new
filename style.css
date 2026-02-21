@@ -1,0 +1,5 @@
+/* Дополнительные стили, если понадобятся. Основной дизайн делает Tailwind CSS в HTML */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
