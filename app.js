@@ -42,7 +42,21 @@ const fetchWeather = async () => {
     }
 };
 
-// Запускаем таймер и погоду
+// Функция для получения курса валют (THB к ILS)
+const fetchExchangeRate = async () => {
+    try {
+        const res = await fetch('https://api.frankfurter.app/latest?from=THB&to=ILS');
+        const data = await res.json();
+        const rate = data.rates.ILS;
+        document.getElementById('exchange-rate').innerText = `1 ฿ = ${rate.toFixed(2)} ₪`;
+    } catch (error) {
+        console.error("Не удалось загрузить курс валют:", error);
+        document.getElementById('exchange-rate').innerText = "N/A";
+    }
+};
+
+// Запускаем таймер, погоду и курс валют
 updateCountdown();
 setInterval(updateCountdown, 1000);
 fetchWeather();
+fetchExchangeRate();
