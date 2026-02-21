@@ -23,6 +23,26 @@ const updateCountdown = () => {
     document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
 };
 
-// Запускаем таймер сразу и обновляем каждую секунду
+// Функция для получения погоды
+const fetchWeather = async () => {
+    try {
+        // Координаты Пхукета (HKT)
+        const resHKT = await fetch('https://api.open-meteo.com/v1/forecast?latitude=8.1132&longitude=98.3169&current_weather=true');
+        const dataHKT = await resHKT.json();
+        document.getElementById('weather-hkt').innerText = `${Math.round(dataHKT.current_weather.temperature)}°C`;
+
+        // Координаты Тель-Авива (Бен-Гурион, TLV)
+        const resTLV = await fetch('https://api.open-meteo.com/v1/forecast?latitude=32.0114&longitude=34.8867&current_weather=true');
+        const dataTLV = await resTLV.json();
+        document.getElementById('weather-tlv').innerText = `${Math.round(dataTLV.current_weather.temperature)}°C`;
+    } catch (error) {
+        console.error("Не удалось загрузить погоду:", error);
+        document.getElementById('weather-hkt').innerText = "N/A";
+        document.getElementById('weather-tlv').innerText = "N/A";
+    }
+};
+
+// Запускаем таймер и погоду
 updateCountdown();
 setInterval(updateCountdown, 1000);
+fetchWeather();
