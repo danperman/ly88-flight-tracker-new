@@ -48,37 +48,33 @@
                 </div>
             </div>
 
-<div class="p-6 bg-gray-50 border-t border-gray-100">
+            <div class="bg-gray-50 px-6 py-8 text-center border-b border-gray-100">
+                <h3 class="text-gray-500 uppercase tracking-wider text-sm font-semibold mb-4">Time until departure</h3>
+                <div id="countdown" class="flex justify-center space-x-4">
+                    <div class="flex flex-col"><span id="days" class="text-3xl font-bold text-gray-800">00</span><span class="text-xs text-gray-500">Days</span></div><span class="text-2xl font-bold text-gray-300">:</span>
+                    <div class="flex flex-col"><span id="hours" class="text-3xl font-bold text-gray-800">00</span><span class="text-xs text-gray-500">Hours</span></div><span class="text-2xl font-bold text-gray-300">:</span>
+                    <div class="flex flex-col"><span id="minutes" class="text-3xl font-bold text-gray-800">00</span><span class="text-xs text-gray-500">Mins</span></div><span class="text-2xl font-bold text-gray-300">:</span>
+                    <div class="flex flex-col"><span id="seconds" class="text-3xl font-bold text-gray-800">00</span><span class="text-xs text-gray-500">Secs</span></div>
+                </div>
+            </div>
+            
+            <div class="p-6 bg-white">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-gray-600 font-semibold text-sm uppercase tracking-wide">Live Radar (Phuket Area)</h3>
+                    <h3 class="text-gray-600 font-semibold text-sm uppercase tracking-wide">Live Radar Tracking</h3>
                     <div class="flex items-center">
                         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse mr-2"></span>
-                        <span class="text-xs text-green-600 font-medium">Live</span>
+                        <span class="text-xs text-green-600 font-medium">Active</span>
                     </div>
                 </div>
                 
-                <div class="w-full h-64 rounded-xl overflow-hidden shadow-inner border border-gray-200 relative mb-4">
-                    <iframe 
-                        src="https://www.flightradar24.com/simple_index.php?lat=8.11&lon=98.31&z=8" 
-                        width="100%" 
-                        height="100%" 
-                        frameborder="0" 
-                        class="absolute top-0 left-0 w-full h-full">
-                    </iframe>
-                </div>
-
-                <div class="text-center">
-                    <a href="https://www.flightradar24.com/data/flights/ly88" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-blue-100 text-blue-700 hover:bg-blue-200 font-semibold px-6 py-2.5 rounded-lg transition-colors text-sm shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="text-center mt-4">
+                    <a href="https://www.flightradar24.com/data/flights/ly88" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-blue-100 text-blue-700 hover:bg-blue-200 font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                         Track LY88 on FlightRadar24
                     </a>
                 </div>
-            </div>
-            
-            <div class="p-6">
-                 <p class="text-xs text-center text-gray-400 mb-2">Live radar view will be available closer to departure time via FlightRadar24.</p>
             </div>
         </div>
     </div>
