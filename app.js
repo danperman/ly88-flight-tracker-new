@@ -37,8 +37,24 @@ const fetchWeather = async () => {
         document.getElementById('weather-tlv').innerText = `${Math.round(dataTLV.current_weather.temperature)}°C`;
     } catch (error) {
         console.error("Не удалось загрузить погоду:", error);
-        document.getElementById('weather-hkt').innerText = "N/A";
-        document.getElementById('weather-tlv').innerText = "N/A";
+
+        // Phuket Error State
+        const hktContainer = document.getElementById('weather-hkt-container');
+        hktContainer.classList.remove('bg-blue-50');
+        hktContainer.classList.add('bg-red-100');
+        const hktText = document.getElementById('weather-hkt');
+        hktText.classList.remove('text-blue-800');
+        hktText.classList.add('text-red-700');
+        hktText.innerText = "N/A";
+
+        // Tel Aviv Error State
+        const tlvContainer = document.getElementById('weather-tlv-container');
+        tlvContainer.classList.remove('bg-blue-50');
+        tlvContainer.classList.add('bg-red-100');
+        const tlvText = document.getElementById('weather-tlv');
+        tlvText.classList.remove('text-blue-800');
+        tlvText.classList.add('text-red-700');
+        tlvText.innerText = "N/A";
     }
 };
 
